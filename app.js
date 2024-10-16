@@ -24,13 +24,13 @@ app.use(methodOverride('_method'));
 
 
 async function main(){
-   // await mongoose.connect(process.env.DATABASE_URL);
-   await mongoose.connect('mongodb://localhost:27017/wanderlust')
+    await mongoose.connect(process.env.DATABASE_URL);
+  // await mongoose.connect('mongodb://localhost:27017/wanderlust')
 }
 
 main().then(()=>{
   console.log("Connected to DB");
-}).catch((err)=>{
+}).catch((err)=>{  
   console.log(err);
 });
 
