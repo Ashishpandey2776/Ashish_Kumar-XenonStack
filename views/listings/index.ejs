@@ -41,55 +41,7 @@
         </div>
       </a>
       <%  }  %>
-       <!-- <div class="filter" id="trending"  >
-        <div><i class="fa-solid fa-fire"></i></div>
-        <p>Trending</p>
-      </div> -->
-      
-      <!-- <div class="filter">
-        <div><i class="fa-solid fa-bed"></i></div>
-        <p>Rooms</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-mountain-city"></i></div>
-        <p>Iconic Cities</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-ship"></i></div>
-        <p>costel</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-wheat-awn"></i></div>
-        <p>Farms</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-industry"></i></div>
-        <p>Industry</p>
-      </div> 
-      <div class="filter">
-        <div><i class="fa-solid fa-mountain-city"></i></div>
-        <p>Iconic Cities</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-ship"></i></div>
-        <p>costel</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-tree"></i></div>
-        <p>Forest</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-regular fa-snowflake"></i></div>
-        <p>Arctic</p>
-      </div> 
-
-      <div class="tax-togle">
-        <div class="form-check-reverse form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Total Before Taxes</label>
-          </div>
-      </div> -->
-
+     
  </div>
 
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 justify-content-center">
@@ -109,47 +61,5 @@
         <% } %>
     </div>
 
-<script>
-    let taxswich=document.getElementById("flexSwitchCheckDefault");
-    taxswich.addEventListener("click",()=>{
-        console.log("hello");
-        let taxinfo=document.getElementsByClassName("taxinfo");
-        for(info of taxinfo){
-          if(info.style.display != "inline"){
-            info.style.display="inline";
-          }else{
-            info.style.display="none";
-          }
-        }
-    });
 
-    
-//     document.getElementById("trending").addEventListener('click', function() {
-//   fetch('/listings/trending', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'text/plain' 
-//     },
-//     body: 'trending' 
-//   })
-//   .then(response => {
-//     if (!response.ok) {
-//       throw new Error('Network response was not ok');
-//     }
-//     return response.text();
-//   })
-//   .then(data => {
-//     console.log('Success:', data);
-//     async (req, res) => {
-//     const allListings = await Listing.find({});
-//     res.render("listings/index.ejs", { allListings });
-//   }
-//   })
-//   .catch(error => {
-//     console.error('Error:', error);
-//   });
-// });
-
-
-</script>
 

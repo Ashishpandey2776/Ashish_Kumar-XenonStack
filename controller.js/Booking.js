@@ -17,15 +17,11 @@ const User=require("../models/user.js");
             startDate,
             endDate
         });
-        console.log(newBooking);
-        //for sms service
         const user_details=await User.findById(newBooking.user);
         const listing_details = await Listing.findById(newBooking.listingId);
-       // console.log(user_details,listing_details)
 
         await newBooking.save();
         req.flash("success","Booking successful!");
-        mailsender(user_details,listing_details,newBooking)
         res.redirect("/listings");
         res.status(201).send({ message: 'Booking successful', data: newBooking });
     } catch (error) {

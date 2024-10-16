@@ -1,22 +1,14 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WanderLust</title>
-  </head> -->
+
   <% layout("/listings/layouts/boilerplate") %> 
   <body>
     <h3>Create a New Listing</h3>
     <form method="POST" action="/listings" enctype="multipart/form-data">
-      <!-- class="needs-validation" novalidate bootstrap -->
+
       <div class="row mb-3">
         <div class="col">
           <label for="title" class="from-lable">Title</label><br>
           <input name="listing[title]" placeholder="enter title" type="text" class="form-control" required/>
-          <!-- <div class="valid-feedback">
-            Looks good!
-          </div> -->
+          
         </div>
       </div>
       

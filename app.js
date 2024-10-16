@@ -14,7 +14,6 @@ const { send } = require("process");
 const listings=require("./routes/listing.js");
 const userRouter=require("./routes/user.js");
 const bookingRouter=require("./routes/booking.js");
-const reviews=require("./routes/review.js")
 const session=require("express-session");
 const flash=require("connect-flash");
 const passport=require("passport");
@@ -53,10 +52,6 @@ const sessionOption={
    },
 };
 
-// app.get("/",(req,res)=>{  //set up url
-//     res.send(" lisning...");
-// });
- 
 app.use(session(sessionOption));
 app.use(flash());  //flash always use before routes
 
@@ -76,23 +71,9 @@ app.use((req,res,next)=>{
 
 
  
-  app.use("/listings",listings);               //this is work in two part
-  app.use("/listings/:id/reviews",reviews);   //common route yaha match hoga aur baki ke liye file ka path define h usme jake dekhenge
+  app.use("/listings",listings);                
   app.use("/",userRouter);
   app.use("/listings",bookingRouter);
-// app.get("/testListing",async(req,res)=>{
-//     let sampledata=new Listing({
-//         title:"My new Vila",
-//         description:"By the beach",
-//         price:1200,
-//         location:"Goa",
-//         country:"India",
-//     });
-//     await sampledata.save();
-//     console.log(sampledata);
-//     res.send("sucessfull testing");
-// });
-
 
 // midleware for valdition data error
 app.all("*",(req,res,next)=>{

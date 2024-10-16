@@ -35,19 +35,6 @@ const User=require("../models/user.js");
     }
   };
 
-  //trendingfilter
-  // module.exports.trendingfilter=async(req,res)=>{
-  //   const requestBody = req.body;
-  //   console.log(req.body);
-  //   if (requestBody === 'trending') {
-  //     res.send("every thing good");
-  //   }else {
-  //     res.status(400).send('Invalid request');
-  //   }
-  // };
-  
- 
-   
   module.exports.renderNewForm=(req,res)=>{
     res.render("listings/new.ejs");
   };
@@ -81,8 +68,6 @@ module.exports.showListings=async (req, res) => {
     }
     res.render("listings/show.ejs", { listing });
   };
-
-  
 
   module.exports.renderEditFrom=async(req,res)=>{
     let { id } = req.params;
