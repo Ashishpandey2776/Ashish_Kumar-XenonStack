@@ -1,0 +1,64 @@
+<% layout("/listings/layouts/boilerplate") %> 
+
+    <style>
+        .booking-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 16px;
+            transition: transform 0.3s;
+        }
+        .booking-card:hover {
+            transform: scale(1.05);
+        }
+        .booking-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .booking-card-body {
+            padding: 12px;
+        }
+        .booking-card-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .booking-card-text {
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+        .booking-card-price {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .btn{
+            margin-bottom: 0.2rem;
+            margin-left: 0.1rem;
+        }
+    </style>
+
+    <div class="container mt-5">
+        <div class="row">
+            <% for (let i = 0; i < book_details.length; i++) { %>
+                <div class="col-md-4">
+                    <div class="card booking-card">
+                        <img src="<%= listing_details[i].image.url %>" class="card-img-top" alt="<%= listing_details[i].title %>">
+                        <div class="card-body booking-card-body">
+                            <h5 class="card-title booking-card-title"><%= listing_details[i].title %></h5>
+                            <p class="card-text booking-card-text"><strong>Location:</strong> <%= listing_details[i].location %>, <%= listing_details[i].country %></p>
+                            <p class="card-text booking-card-price">$<%= listing_details[i].price %>/night</p>
+                            <p class="card-text booking-card-text"><strong>Guest Name:</strong> <%= book_details[i].name %></p>
+                            <p class="card-text booking-card-text"><strong>Booking by:</strong> <%= user_details.username %></p>
+                            <p class="card-text booking-card-text"><strong>Dates:</strong> <%= new Date(book_details[i].startDate).toLocaleDateString() %> - <%= new Date(book_details[i].endDate).toLocaleDateString() %></p>
+                            <p class="card-text booking-card-text"><strong>Contact Details:</strong> <%= user_details.email %></p>
+                            <form method="POST" action="/mybooking/<%= currUser.id %>/<%= book_details[i].id %>?_method=DELETE" >
+                                <button class="btn btn-danger">Cancel</button>
+                            </form>                            
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
