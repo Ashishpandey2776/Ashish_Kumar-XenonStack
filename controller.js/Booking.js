@@ -17,7 +17,7 @@ const User=require("../models/user.js");
             startDate,
             endDate
         });
-        const user_details=await User.findById(newBooking.user);
+        const user_details=await User.findById(newBooking.user)
         const listing_details = await Listing.findById(newBooking.listingId);
 
         await newBooking.save();
