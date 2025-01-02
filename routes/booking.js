@@ -2,7 +2,7 @@ const express=require("express");
 const wrapAsync = require("../utils/wrapAsync");
 const router=express.Router();
 const {islogedIn,isowner}=require("../middleware.js")
-const BookingConroller=require("../controller.js/Booking.js")
+const BookingConroller=require("../controller.js/Booking.js");
 
 
 //for booking
